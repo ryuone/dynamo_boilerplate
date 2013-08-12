@@ -16,4 +16,16 @@ defmodule ApplicationRouter do
     conn = conn.assign(:title, "Welcome to Dynamo!")
     render conn, "index.html"
   end
+
+  @doc """
+  For cookie
+  """
+  get "/put_cookie" do
+    conn = put_cookie(conn, :foo, :new, path: "/")
+    conn.send(200, "<h1>OK /put_cookie</h1>")
+  end
+
+  get "/get_cookie" do
+    conn.send(200, "<h1>OK /get_cookie : #{get_cookie(conn, "foo")}</h1>")
+  end
 end
