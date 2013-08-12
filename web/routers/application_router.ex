@@ -5,7 +5,7 @@ defmodule ApplicationRouter do
     # Pick which parts of the request you want to fetch
     # You can comment the line below if you don't need
     # any of them or move them to a forwarded router
-    conn.fetch([:cookies, :params])
+    conn.fetch([:cookies, :params, :session])
   end
 
   # It is common to break your Dynamo in many
@@ -27,5 +27,16 @@ defmodule ApplicationRouter do
 
   get "/get_cookie" do
     conn.send(200, "<h1>OK /get_cookie : #{get_cookie(conn, "foo")}</h1>")
+  end
+
+  @doc """
+  For session
+  """
+  get "/put_session" do
+    put_session(conn, :hello, "world").send(200, "<h1>OK</h1>")
+  end
+
+  get "/get_session" do
+    conn.send(200, "<h1>#{get_session(conn, :hello)}</h1>")
   end
 end
