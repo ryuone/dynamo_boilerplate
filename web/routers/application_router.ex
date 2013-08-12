@@ -54,4 +54,20 @@ defmodule ApplicationRouter do
     {ok, data} = DynamoBoilerplate.EredisPool.get_strings_data('name')
     conn.send(200, "<h1>OK /get_strings_data : #{data}</h1>")
   end
+
+  @doc """
+  Notfound page
+  """
+  get "/notfound" do
+    Lager.info "param : #{conn.params[:path]}"
+    conn.resp 404, "<h1>Not implement : #{conn.params[:path]}</h1>"
+  end
+
+  @doc """
+  Not implement
+  """
+  get "/:notimplement" do
+    Lager.info "path : #{notimplement}"
+    redirect conn, to: "/notfound?path=#{notimplement}"
+  end
 end
