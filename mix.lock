@@ -1,6 +1,15 @@
-[ "cowboy": {:git, "git://github.com/extend/cowboy.git", "6e33274c852f60eccbdc610b0525c3541d36aa89", []},
+[ "covertool": {:git, "git://github.com/idubrov/covertool.git", "07b871a68ea009d977a3e7991650b9b2c84a7590", [{:branch, "master"}]},
+  "cowboy": {:git, "git://github.com/extend/cowboy.git", "3b4c0588e9bb98307576f7d6e0b52ea434138e62", []},
   "dynamo": {:git, "git://github.com/elixir-lang/dynamo.git", "b44250c2f99a7738b09af8db001256e511452ec0", []},
+  "edown": {:git, "git://github.com/esl/edown.git", "1f6954ce8f313139385110f68c18c17adb2723f8", [{:branch, "master"}]},
+  "eredis": {:git, "git://github.com/wooga/eredis.git", "313fce73b0fdb53f3a5f146a7adf19677b417cb5", [{:branch, "master"}]},
+  "eredis_pool": {:git, "git://github.com/hiroeorz/eredis_pool.git", "a762831bf3bd784b31b16669d320b57a81bbd594", []},
   "ex_doc": {:git, "https://github.com/elixir-lang/ex_doc.git", "4bc1e9af619fd98e51479cbe09157ff831b0d4e1", []},
+  "exlager": {:git, "git://github.com/khia/exlager.git", "b50e47abe39b2cb28fa431f0af4390c2324bf229", []},
+  "goldrush": {:git, "git://github.com/DeadZen/goldrush.git", "879c69874a555b2c13498aa4a3da6f6bbbb6a031", [{:tag, "879c69874a"}]},
   "hackney": {:git, "git://github.com/benoitc/hackney.git", "6f9b403602371bc3d4aa0b67b1e253b105075bcf", []},
-  "mimetypes": {:git, "git://github.com/spawngrid/mimetypes.git", "e9dfab5aec98963589ecf13bdfcf0490667a730d", []},
-  "ranch": {:git, "git://github.com/extend/ranch.git", "935c7c94673027c3940a771c6e8b32f77152f1c9", [{:ref, "0.8.2"}]} ]
+  "lager": {:git, "https://github.com/basho/lager.git", "2965c23f46301afeb7d62f6fbac99b3ab367f6b2", []},
+  "mimetypes": {:git, "git://github.com/spawngrid/mimetypes.git", "47d37a977a7d633199822bf6b08353007483d00f", []},
+  "poolboy": {:git, "git://github.com/devinus/poolboy.git", "91b68de43d49bcccf2631016febda70b20d7aa75", [{:branch, "master"}]},
+  "ranch": {:git, "git://github.com/extend/ranch.git", "4f70a16bbe08e446e8fec248ca345d5f8e7df038", [{:ref, "0.8.4"}]},
+  "rebar": {:git, "https://github.com/basho/rebar.git", "ebb474b7593527969a8ce7d43b42f00e4498c391", [{:tag, "2.1.0-pre"}]} ]
