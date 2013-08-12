@@ -41,4 +41,17 @@ defmodule ApplicationRouter do
   get "/get_session" do
     conn.send(200, "<h1>#{get_session(conn, :hello)}</h1>")
   end
+
+  @doc """
+  For eredis_pool
+  """
+  get "/set_strings_data" do
+    DynamoBoilerplate.EredisPool.set_strings_data('name', 'ryuone')
+    conn.send(200, "<h1>OK /set_strings_data</h1>")
+  end
+
+  get "/get_strings_data" do
+    {ok, data} = DynamoBoilerplate.EredisPool.get_strings_data('name')
+    conn.send(200, "<h1>OK /get_strings_data : #{data}</h1>")
+  end
 end
