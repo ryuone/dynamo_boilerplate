@@ -1,5 +1,6 @@
 defmodule ApplicationRouter do
   use Dynamo.Router
+  require Lager, as: Log
 
   prepare do
     # Pick which parts of the request you want to fetch
@@ -13,6 +14,7 @@ defmodule ApplicationRouter do
   # forward "/posts", to: PostsRouter
 
   get "/" do
+    Log.info("path : ~p", [conn.path])
     conn = conn.assign(:title, "Welcome to Dynamo!")
     render conn, "index.html"
   end

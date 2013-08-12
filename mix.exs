@@ -13,12 +13,13 @@ defmodule DynamoBoilerplate.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    [ applications: [:cowboy, :dynamo],
+    [ applications: [:exlager, :cowboy, :dynamo],
       mod: { DynamoBoilerplate, [] } ]
   end
 
   defp deps do
     [ { :cowboy, github: "extend/cowboy" },
+      { :exlager, github: "khia/exlager" },
       { :dynamo, "0.1.0-dev", github: "elixir-lang/dynamo" } ]
   end
 end
