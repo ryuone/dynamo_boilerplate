@@ -53,7 +53,7 @@ defmodule ApplicationRouter do
   end
 
   get "/get_strings_data" do
-    {ok, data} = DynamoBoilerplate.EredisPool.get_strings_data('name')
+    {:ok, data} = DynamoBoilerplate.EredisPool.get_strings_data('name')
     conn.send(200, "<h1>OK /get_strings_data : #{data}</h1>")
   end
 

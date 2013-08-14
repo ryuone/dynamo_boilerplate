@@ -13,7 +13,7 @@ defmodule DynamoBoilerplate do
   end
 
   def start_eredis_pool do
-    {ok, pool_setting} = :application.get_env(:dynamo_boilerplate, :eredis_pool)
+    {:ok, pool_setting} = :application.get_env(:dynamo_boilerplate, :eredis_pool)
     :application.set_env(:eredis_pool, :pools, pool_setting)
     :application.start(:eredis_pool)
   end
