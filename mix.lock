@@ -1,6 +1,6 @@
 [ "covertool": {:git, "git://github.com/idubrov/covertool.git", "07b871a68ea009d977a3e7991650b9b2c84a7590", [{:branch, "master"}]},
   "cowboy": {:git, "git://github.com/extend/cowboy.git", "3b4c0588e9bb98307576f7d6e0b52ea434138e62", []},
-  "dynamo": {:git, "git://github.com/elixir-lang/dynamo.git", "b44250c2f99a7738b09af8db001256e511452ec0", []},
+  "dynamo": {:git, "git://github.com/elixir-lang/dynamo.git", "82aa4c37c456541983e56bfc7d544b812a9b6077", [{:tag, "elixir-0.10.1"}]},
   "edown": {:git, "git://github.com/esl/edown.git", "1f6954ce8f313139385110f68c18c17adb2723f8", [{:branch, "master"}]},
   "eredis": {:git, "git://github.com/wooga/eredis.git", "313fce73b0fdb53f3a5f146a7adf19677b417cb5", [{:branch, "master"}]},
   "eredis_pool": {:git, "git://github.com/hiroeorz/eredis_pool.git", "a762831bf3bd784b31b16669d320b57a81bbd594", []},

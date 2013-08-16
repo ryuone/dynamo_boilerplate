@@ -34,6 +34,6 @@ defmodule DynamoBoilerplate.Mixfile do
     [ { :cowboy, github: "extend/cowboy" },
       { :exlager, github: "khia/exlager" },
       { :eredis_pool, github: "hiroeorz/eredis_pool" },
-      { :dynamo, "0.1.0-dev", github: "elixir-lang/dynamo" } ]
+      { :dynamo, tag: "elixir-0.10.1", github: "elixir-lang/dynamo" } ]
   end
 end
