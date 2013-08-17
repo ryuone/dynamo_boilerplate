@@ -22,8 +22,8 @@ defmodule ApplicationRouter do
 
   @prepare :basicAuth
   get "/" do
-    Log.info("path : ~p", [conn.path])
     conn = conn.assign(:title, "Welcome to Dynamo!")
+    conn = conn.assign(:name, conn.params[:name])
     render conn, "index.html"
   end
 
@@ -65,11 +65,16 @@ defmodule ApplicationRouter do
     conn.send(200, "<h1>OK /get_strings_data : #{data}</h1>")
   end
 
+  get "/favicon.ico" do
+    {:ok, fd} = :file.read_file(DynamoBoilerplate.Dynamo.config[:dynamo][:static_root] <> "/favicon.ico")
+    conn = conn.resp_content_type("image/x-icon")
+    conn.send(200, fd)
+  end
+
   @doc """
   Notfound page
   """
   get "/notfound" do
-    Lager.info "param : #{conn.params[:path]}"
     conn.resp 404, "<h1>Not implement : #{conn.params[:path]}</h1>"
   end
 
@@ -77,7 +82,6 @@ defmodule ApplicationRouter do
   Not implement
   """
   get "/:notimplement" do
-    Lager.info "path : #{notimplement}"
     redirect conn, to: "/notfound?path=#{notimplement}"
   end
 
