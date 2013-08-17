@@ -1,4 +1,6 @@
 defmodule BasicAuthentication do
+  use Dynamo.Utils.Once
+  use_once Dynamo.HTTP
   require Lager, as: Log
 
   def basicAuth(conn) do
@@ -32,6 +34,6 @@ defmodule BasicAuthentication do
 
   defp setAuthenticate(conn) do
     conn = conn.put_resp_header('WWW-Authenticate', 'Basic realm="BasicTest"')
-    conn.status(401)
+    halt! conn.status(401)
   end
 end
