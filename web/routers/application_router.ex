@@ -3,6 +3,12 @@ defmodule ApplicationRouter do
   require Lager, as: Log
   require BasicAuthentication
 
+  filter Dynamo.Filters.Session.new(
+    Dynamo.Filters.Session.CookieStore,
+    [
+      key: "_dynamo_boilerplate_session",
+      secret: "RoaFKJVEwvckED8FtQuAuwwkh8ciXzA72zUYw3HPLfpoqkSWspfYHV2OPPiIobU/"])
+
   prepare do
     # Pick which parts of the request you want to fetch
     # You can comment the line below if you don't need

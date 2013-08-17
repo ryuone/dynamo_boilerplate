@@ -16,11 +16,11 @@ defmodule DynamoBoilerplate.Dynamo do
     static_route: "/static"
 
   # Uncomment the lines below to enable the cookie session store
-  config :dynamo,
-    session_store: Session.CookieStore,
-    session_options:
-      [ key: "_dynamo_boilerplate_session",
-        secret: "RoaFKJVEwvckED8FtQuAuwwkh8ciXzA72zUYw3HPLfpoqkSWspfYHV2OPPiIobU/"]
+  # config :dynamo,
+  #   session_store: Session.CookieStore,
+  #   session_options:
+  #     [ key: "_dynamo_boilerplate_session",
+  #       secret: "RoaFKJVEwvckED8FtQuAuwwkh8ciXzA72zUYw3HPLfpoqkSWspfYHV2OPPiIobU/"]
 
   # Default functionality available in templates
   templates do
